@@ -1,0 +1,13 @@
+<%- include('partials/header'); -%>  <!--to include header-->
+
+<h1>Home</h1>
+<p><%=homeContent %></p>
+
+    <% Contentposts.forEach(function(contentPost) { %> <!--in place of for loop we here use forEach which is equal to a for loop thus we can use this feature of js-->
+        <h1> <%=contentPost.Title %></h1>
+        <p> <%=contentPost.body.substring(0,100) +"..." %></p> <!--here we use .substring (0,100)+"..." to truncate the whole body into 100 words so that only 100 words are present on the screen at the time page loads-->
+        <a href="/posts/<%= contentPost.Title %>">Read more</a> <!--this is anchor tag after licking that the user can read the whole content of the body and the new page opens-->
+        <% }) %>
+
+ <%- include('partials/footer'); -%>  
+
